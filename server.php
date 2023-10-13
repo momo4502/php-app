@@ -24,8 +24,8 @@ $callback = function($msg) {
 	$data = json_decode($msg->body, true);
 
 	//Detect if wget and ffmpeg are installed
-	exec("man wget", $wget_exist);
-	exec("man ffmpeg", $ffmpeg_exist);
+	exec("command -v wget", $wget_exist);
+	exec("command -v ffmpeg", $ffmpeg_exist);
 
 	if ($wget_exist) {
 		//Use wget to download the video.
